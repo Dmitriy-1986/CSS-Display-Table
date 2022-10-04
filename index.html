@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Example HTML</title>
+
+		<style type="text/css">		
+			* {
+				box-sizing: border-box;
+			}
+			body {
+				background: #2b2b2b; 
+				color: #cecece; 
+				text-align: 
+				center; 
+				font-family: sans-serif;
+			}
+
+			.container {
+				max-width: 1000px; 
+				min-height: calc(100vh - 20px);
+				margin: 0 auto; 
+				padding: 10px;
+				background-color: #666666;
+			}
+
+			/* Table CSS */
+			.table {
+				display: table;
+				width: 100%;
+			}	
+			.tr {
+				display: table-row;
+
+			}	
+			.th {
+				display: table-cell;
+				border: 1px solid #000;
+				background-color: yellow;
+				color: black;
+				padding: 10px;
+			}
+			.td {
+				display: table-cell;
+				border: 1px solid #000;
+				padding: 10px;
+			}
+
+			@media screen and (max-width: 800px) {
+				.table {
+					display: block;
+				}
+				.th {
+					display: none;
+				}
+				.tr {
+					display: block;
+					border: 1px solid black;
+					border-top: none;
+				}
+				.td {
+					display: block;
+					border: none;
+					background-color: #666666;
+					color: #cecece;
+					padding: 0 0 10px 0;
+				}				
+				.columns::before {
+					content: attr(data-columns);
+					display: block;
+					background-color: blue;
+					color: #cecece;	
+					margin-bottom: 10px;
+					padding: 10px 0 10px 0;
+				} 
+				.date-times::before {
+					content: attr(data-date-times);
+					display: block;
+					background-color: blue;
+					color: #cecece;
+					margin-bottom: 10px;
+					padding: 10px;
+				}
+				.info::before {
+					content: attr(data-info);
+					display: block;
+					background-color: blue;
+					color: #cecece;
+					margin-bottom: 10px;
+					padding: 10px;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		
+		<div class="container">
+			<h2 class="title">Display Table</h2>
+			<hr>
+
+			<div class="table">
+				<div class="tr">
+					<div class="th">#з/п</div>
+					<div class="th">Дата та час</div>
+					<div class="th">Зміст інфо.</div>
+				</div>
+				<div class="tr">
+					<div class="td columns" data-columns="#з/п">1</div>
+					<div class="td date-times" data-date-times="Дата та час">10.00, 04.10.22</div>
+					<div class="td info" data-info="Зміст інфо.">Test info</div>
+				</div>
+				<div class="tr">
+					<div class="td columns" data-columns="#з/п">2</div>
+					<div class="td date-times" data-date-times="Дата та час">10.00, 04.10.22</div>
+					<div class="td info" data-info="Зміст інфо.">Test info</div>
+				</div>
+				<div class="tr">
+					<div class="td columns" data-columns="#з/п">3</div>
+					<div class="td date-times" data-date-times="Дата та час">10.00, 04.10.22</div>
+					<div class="td info" data-info="Зміст інфо.">Test info</div>
+				</div>
+			</div>
+
+		</div>
+		
+	</body>
+</html>
